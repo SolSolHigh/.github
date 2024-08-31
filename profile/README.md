@@ -314,7 +314,10 @@ cloud:
 <br>
 
 ### 빌드 및 실행방법
-
+---
+    yaml 파일 모두 필요한 값들 채운 후 필요한 위치로 전송.
+    docker 설치 후 docker-compose.yml가 존재하는 경로로 이동.
+    docker-compose up -d 실행.
 ---
 
 
