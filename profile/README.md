@@ -52,7 +52,6 @@
 <img src="./docs/tailwindcss.svg" alt="tailwindcss" width="60" height="60" />&emsp;
 <img src="./docs/tanstackquery.png" alt="tanstack-query" width="60" height="60" />&emsp;
 <img src="./docs/recoil.svg" alt="recoil" width="60" height="60" />&emsp;
-<img src="./docs/mswjs.svg" alt="mswjs" width="60" height="60" />
 <br>
 <br>
 **CI/CD**<br><br>
