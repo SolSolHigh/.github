@@ -72,6 +72,54 @@
 
 <br>
 <br>
+
+### 빌드 및 실행 방법
+
+---
+
+```jsx
+#!/bin/bash
+cd ~/solsol-high/static
+git fetch origin
+git checkout $1
+git pull origin $1
+cd ~/solsol-high/static/ssh-web
+npm install
+npm run build
+```
+
+- 위의 스크립트를 실행시키는 쉘 스크립트 파일을 웹 프로젝트를 배포하고자 하는 서버에 심어놓는다.
+
+```jsx
+
+name: SolSolHigh-FE Deploy
+
+on:
+  push:
+    branches: develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # stage : ssh
+      - name: SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_KRO_HOST }}
+          username: ${{ secrets.SSH_KRO_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd ~/solsol-high
+            ./static.sh develop
+```
+
+- develop 브랜치에 push 이벤트가 발생하면 서버로 통합 후 배포
+- 웹 프로젝트를 배포하고자 하는 서버에 SSH 로 접속한다.
+- 위에서 작성한 쉘 스크립트를 실행시킨다.
+
+<br>
+<br>
 <br>
 <br>
 
